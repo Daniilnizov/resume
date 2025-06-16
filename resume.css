@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+* {
+    background: #ddd;  
+    box-sizing: border-box; /* помогает избежать "прыжков" при padding/margin */
+}
+
+body {
+font: 500 16px 'roboto', sans-serif;
+}
+
+h1{color: rgb(61, 61, 61);}
+
+#aboutme {
+  max-width: 600px;  /* Максимальная ширина текста */
+  width: 100%;        /* Адаптивность: займет всю доступную ширину, но не больше 600px */
+  margin-left: 20px;     /* Центрирование блока по горизонтали */
+}
+
+td, th {
+    padding: 10px; /* отступы внутри ячеек */
+}
