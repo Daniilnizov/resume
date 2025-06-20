@@ -1,24 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
 
+* {
+  margin:0;
+  padding: 0;
+}
+body {
+  margin: 0;
+}
+
 body {
 font: 500 16px 'roboto', sans-serif;
 color: #0f141e;
 background: #ddd;
-padding-left: 10px;  
 }
 
-h1{color: rgb(61, 61, 61);}
+.avatar{
+box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25);
+margin: 0 0 10px 10px ;
+border-radius: 20px;
+height: 100%;               /* 🔹 Подстроиться под высоту текста */
+width: auto;
+max-width: 250px;  
+object-fit: contain;       /* Чтобы не растягивалась */
+}
 
-#aboutme {
-  max-width: 600px;  /* Максимальная ширина текста */
+h1, h2 {color: rgb(61, 61, 61);
+padding: 10px 0px
+}
+
+.container {
+  max-width: 800px;  /* Максимальная ширина текста */
   width: 100%;        /* Адаптивность: займет всю доступную ширину, но не больше 600px */
-  margin-left: 20px;     /* Центрирование блока по горизонтали */
+  margin: auto;     /* Центрирование блока по горизонтали */
   color: #4e5257;
+  padding-top: 30px;
 }
 
+.table{
+  background-color:aquamarine;
+}
+.table td, th{
+    text-align: left;
+    /* по центру */
+    padding: 10px;
+    padding-right: 20px;
+    /* отступ вниз. margin не сработает */
+}
+.table th{
+  background: burlywood;
+}
 
-td, th {
-    padding: 10px; /* отступы внутри ячеек */
+.table td:last-child{
+  padding-right: 10px;
+}
+
+.table tr:nth-child(even){
+  background: aqua ;
+}
+
+.table td:hover{
+  background: #663399;
+  color: antiquewhite;
+}
+
+#site{
+  text-decoration:underline;
 }
 
 #hobby {
@@ -31,6 +77,127 @@ border-radius:15px;
     background: cyan;
     border-radius:15px;
 }
-.card{
-padding-left: 5px;    
+.card {
+margin-bottom:20px;  
+padding: 20px;
+list-style-position: inside;    
+}
+.text-info{
+  padding: 0px 20px;
+  margin-bottom:20px; 
+}
+
+a:not(table) {
+  color: #3366cc;               /* Насыщенный синий — красиво и читаемо */
+  text-decoration: none;        /* Убираем подчёркивание по умолчанию */
+  transition: all 0.3s ease;    /* Плавные анимации на наведение/клик */
+  font-weight: 500;             /* Чуть жирнее, читается как кнопка */
+}
+
+a:hover:not(table) {
+  color: #1a4bb8;               /* Темнее при наведении */
+  text-decoration: underline;  /* Подчёркивание при наведении */
+  letter-spacing: 1px;         /* Эффект "раскрытия" */
+}
+table a:hover{
+color:aliceblue
+}
+
+a:active {
+  color: #0d2f7c;               /* Ещё темнее при клике */
+  transform: scale(0.97);      /* Лёгкий эффект "нажатия" */
+}
+
+a:visited {
+  color: #663399;              /* Фиолетовый — как принято в браузерах */
+  opacity: 0.8;                /* Немного тусклее, чтобы отличалось */
+}
+
+.btn {
+    background: #111;
+    border: none; 
+    /* нет граници */
+    padding: 15px 20px;
+    color: #fff;
+    cursor:pointer;
+    /* вид курсора при наведении */
+    border-radius: 5px;
+    font-family: inherit;
+    /* Шрифт как для кнопок */
+}
+.btn:hover{
+  opacity: .7;
+  color: orange;
+}
+.info {
+  display:flex;
+  align-items: stretch;
+  /*  флекс-элементы внутри флекс-контейнера растягиваются 
+  по всей высоте (при расположении в строку) 
+  или по всей ширине (при расположении в столбик) */
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.form-group label{
+  display: block;
+  font-size: 14px;
+}
+
+.name-mail{
+  display: flex;
+}
+
+.form-group{
+  padding-right: 20px;
+  /* width: calc(50% - 20px); */
+  width: 50%;
+  /* на пол ширины минус 20px чтобы точно влезало */
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.ms{
+  width: 100% ;
+  /* синхронизируем с */
+}
+
+.form-group input, 
+.form-group textarea{
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  border-bottom: 3px solid #ccc;
+  color: #000;
+  padding: 15px 0 10px;
+  outline: none;
+  /* убрать рамочку при вводе текста */
+  font-family: inherit;
+}
+
+@media(max-width: 700px) {
+  body{
+    background: #4e5257;
+  }
+  .container{
+    max-width: 400px;
+    background: #eee;
+  }
+  .info{
+    Display:block;
+    text-align: center;
+  }
+  .form-group{
+    width: 100%;
+    padding-right: 0;
+  }
+  .name-mail{
+    display: block;
+  }
+  .text-info h1{
+    padding-top: 0;
+  }
 }
